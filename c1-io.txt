@@ -1,0 +1,70 @@
+C1 root $ sysbench --test=fileio --file-total-size=20G prepare
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+128 files, 163840Kb each, 20480Mb total
+Creating files for the test...
+
+C1 root $ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  53640 Read, 35760 Write, 114330 Other = 203730 Total
+Read 838.12Mb  Written 558.75Mb  Total transferred 1.3641Gb  (4.6558Mb/sec)
+  297.97 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0283s
+    total number of events:              89400
+    total time taken by event execution: 78.4689
+    per-request statistics:
+         min:                                  0.02ms
+         avg:                                  0.88ms
+         max:                                 46.42ms
+         approx.  95 percentile:               2.04ms
+
+Threads fairness:
+    events (avg/stddev):           89400.0000/0.00
+    execution time (avg/stddev):   78.4689/0.00
+
+C1 root $ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=1200 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+
+C1 root $ sysbench --test=fileio --file-total-size=20G cleanup
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Removing test files...

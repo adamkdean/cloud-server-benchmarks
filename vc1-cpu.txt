@@ -1,0 +1,56 @@
+VC1 root $ sysbench --test=cpu --cpu-max-prime=1000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 1000
+
+
+Test execution summary:
+    total time:                          0.8509s
+    total number of events:              10000
+    total time taken by event execution: 0.8486
+    per-request statistics:
+         min:                                  0.08ms
+         avg:                                  0.08ms
+         max:                                  0.73ms
+         approx.  95 percentile:               0.08ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   0.8486/0.00
+
+
+VC1 root $ sysbench --test=cpu --cpu-max-prime=20000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 20000
+
+
+Test execution summary:
+    total time:                          45.9858s
+    total number of events:              10000
+    total time taken by event execution: 45.9822
+    per-request statistics:
+         min:                                  4.59ms
+         avg:                                  4.60ms
+         max:                                  4.98ms
+         approx.  95 percentile:               4.61ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   45.9822/0.00

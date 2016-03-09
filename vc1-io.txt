@@ -1,0 +1,115 @@
+VC1 root $ sysbench --test=fileio --file-total-size=20G prepare
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+128 files, 163840Kb each, 20480Mb total
+Creating files for the test...
+
+VC1 root $ sysbench --test=fileio --file-total-size=20G prepare
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+128 files, 163840Kb each, 20480Mb total
+Creating files for the test...
+VC1 root $ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  60540 Read, 40360 Write, 129108 Other = 230008 Total
+Read 945.94Mb  Written 630.62Mb  Total transferred 1.5396Gb  (5.2552Mb/sec)
+  336.33 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0006s
+    total number of events:              100900
+    total time taken by event execution: 23.1280
+    per-request statistics:
+         min:                                  0.01ms
+         avg:                                  0.23ms
+         max:                                 11.92ms
+         approx.  95 percentile:               0.57ms
+
+Threads fairness:
+    events (avg/stddev):           100900.0000/0.00
+    execution time (avg/stddev):   23.1280/0.00
+
+VC1 root $ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=1200 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  217020 Read, 144680 Write, 462930 Other = 824630 Total
+Read 3.3115Gb  Written 2.2076Gb  Total transferred 5.5191Gb  (4.7095Mb/sec)
+  301.41 Requests/sec executed
+
+Test execution summary:
+    total time:                          1200.0265s
+    total number of events:              361700
+    total time taken by event execution: 318.0518
+    per-request statistics:
+         min:                                  0.02ms
+         avg:                                  0.88ms
+         max:                                 44.66ms
+         approx.  95 percentile:               1.82ms
+
+Threads fairness:
+    events (avg/stddev):           361700.0000/0.00
+    execution time (avg/stddev):   318.0518/0.00
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  245820 Read, 163880 Write, 524383 Other = 934083 Total
+Read 3.7509Gb  Written 2.5006Gb  Total transferred 6.2515Gb  (5.3346Mb/sec)
+  341.42 Requests/sec executed
+
+Test execution summary:
+    total time:                          1200.0004s
+    total number of events:              409700
+    total time taken by event execution: 95.0432
+    per-request statistics:
+         min:                                  0.01ms
+         avg:                                  0.23ms
+         max:                                 12.33ms
+         approx.  95 percentile:               0.59ms
+
+Threads fairness:
+    events (avg/stddev):           409700.0000/0.00
+    execution time (avg/stddev):   95.0432/0.00
+
+VC1 root $sysbench --test=fileio --file-total-size=20G cleanup
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Removing test files...
